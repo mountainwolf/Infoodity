@@ -1,4 +1,4 @@
-# Project Name #
+mmmYum // Food-e // telefood // foodfinity
 
 <!--
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -17,28 +17,29 @@ Once the project moves into development, the press release can be used as a touc
  -->
 
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > mmmYum // Food-e // telefood //the Food Feed // Food Flow // foodfiniti
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > See, Eat, Repeat.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > Users upload photos of food from eateries accompanied by simple reviews and ratings. These reviews are available to view by all users and are searchable by eatery.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > Prospective diners who are frustrated by irrelevant reviews of questionable quality will find concise reviews about what is essential: food.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > This app keeps the reviews food-focused.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > Eat the food you want to see in the world. -ceo
+  Raise your forks, viva la revolución. -cto
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Eat some yummy food, share that yummy food with the world.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > It's heartening to see an app that encourages restaurants up their dish game while promoting the sharing and discovery of great food.
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > The next time you eat your new go-to dish, get on foodfinity and share it with the world.
