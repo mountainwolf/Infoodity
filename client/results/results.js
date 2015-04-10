@@ -14,6 +14,6 @@ angular.module['infoodity.searchResults', []]
         });
     };
 
-    $scope.getResults(); // call getResults after controller is created
+    $scope.changeView = function(view); // call getResults after controller is created
   });
 
