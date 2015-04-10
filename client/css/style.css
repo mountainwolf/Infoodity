@@ -1,0 +1,65 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: #000;
+  position: relative;
+}
+
+a {
+  color: #337ab7;
+}
+
+input {
+  border: none;
+}
+
+#navbar {
+  background-color: #E6E6E6;
+  margin-bottom: 10px;
+}
+
+#navbar h1 {
+  font-weight: 300;
+  font-size: 3em;
+  margin: .55em 0;
+}
+
+#navbar a {
+  text-decoration: none;
+}
+
+.navbarbutton {
+  border: none;
+  background: #FFF;
+  padding: 0px;
+  margin-top: 40px;
+  padding: 0px 10px 0px 10px;
+  margin-left: 5px;
+  color: #337AB7;
+}
+
+.navbarbutton:hover {
+  color: #FFF;
+  background: #337AB7;
+  border: none;
+}
+
+.navbarSearch {
+  height: 100%;
+  padding: 2px;
+}
+
+.spacer {
+  height: 100%;
+  padding: 2px;
+  position: relative;
+}
+
+.test {
+  border: solid 1px #000;
+}

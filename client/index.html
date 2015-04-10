@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html ng-app="infoodity">
+
+<head>
+  <meta charset="utf-8" />
+
+  <title>infoodity</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,300,600,400' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.3.15/angular-resource.min.js"></script>
+  <script src="js/angular-ui-router.min.js"></script>
+
+  <!-- NAVBAR -->
+  <div class="col-md-12 navbar-default" id="navbar">
+    <span class="col-md-1 spacer"></span>
+    <span class="col-md-2">
+      <h1>
+        <a href="index.html">
+          <span id="logo1">infoodity</span>
+        </a>
+      </h1>
+    </span>
+    <span class="col-md-6"></span>
+    <span class="col-md-2 navbarSearch">
+      <form>
+        <input type="text" name="restaurantName" placeholder="Restaurant Name">
+        <input type="submit" value="Search" class="navbarbutton">
+      </form>
+    </span>
+    <span class="col-md-1 spacer"></span>
+  </div>
+
+
+  
+
+<!--CONTENT DIV - WILL REMOVE TEST CLASS-->
+  <div class="col-md-12">
+
+      <!--LEFT SPACER SPAN-->
+      <span class="col-md-1"></span>
+
+      <span class="col-md-10 test" ui-view="content">
+        <!--MAIN CONTENT SPAN - WILL REMOVE TEST CLASS-->
+        <div class="row test">
+          <p>Main content test test test</p>
+          <p>Main content test test test</p>
+          <p>Main content test test test</p>
+          <p>Main content test test test</p>
+          <p>Main content test test test</p>
+          <p>Main content test test test</p>
+          <p>Main content test test test</p>
+          <p>Main content test test test</p>
+          <p>Main content test test test</p>
+          <p>Main content test test test</p>
+          <p>Main content test test test</p>
+          <p>Main content test test test</p>
+          <p>Main content test test test</p>
+          <p>Main content test test test</p>
+          
+        </div>
+
+
+        <!--SECONDARY CONTENT SPAN - WILL REMOVE TEST CLASS-->
+        <div class="row test" ui-view="nested content">
+          <p>Secondary content test test test</p>
+          <p>Secondary content test test test</p>
+          <p>Secondary content test test test</p>
+          <p>Secondary content test test test</p>
+          <p>Secondary content test test test</p>
+          <p>Secondary content test test test</p>
+          <p>Secondary content test test test</p>
+          <p>Secondary content test test test</p>
+          <p>Secondary content test test test</p>
+          <p>Secondary content test test test</p>
+          <p>Secondary content test test test</p>
+          <p>Secondary content test test test</p>
+          <p>Secondary content test test test</p>
+          <p>Secondary content test test test</p>
+          <p>Secondary content test test test</p>
+          <p>Secondary content test test test</p>
+          <p>Secondary content test test test</p>
+          <p>Secondary content test test test</p>
+          <p>Secondary content test test test</p>
+
+
+        </div>
+
+      </span>
+
+      <!--RIGHT SPACER-->
+      <span class="col-md-1"></span>
+
+  </div>
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
