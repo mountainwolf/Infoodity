@@ -13,4 +13,8 @@ router.get('/:something', function(req, res, next) {
   res.end('fake data');
 });
 
+router.post('/', function(req, res, next) {
+  res.status(202).send('post request was heard');
+})
+
 module.exports = router;

@@ -57,5 +57,25 @@ describe('', function() {
     });
 
 
+    it('returns 404 at root', function(done) {
+        request(app)
+          .get('/api/')
+          .expect(404)
+          .end(done);   
+    });
+
+
+  });
+  describe('post api ', function() {
+
+    it('returns 202 for post to root', function(done) {
+      request(app)
+        .post('/api/')
+        .expect(202)
+        .end(done);
+    });
+
+
+
   });
 });
