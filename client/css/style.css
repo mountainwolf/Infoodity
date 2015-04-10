@@ -63,3 +63,21 @@ input {
 .test {
   border: solid 1px #000;
 }
+
+.searchResult {
+  height: 75px;
+  background-color: #E6E6E6;
+  color: #000;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.restaurantName {
+  font-weight: 400;
+  font-size: 1.75em;
+}
+
+.restaurantLocation {
+  font-size: 1.55em;
+  text-align: right;
+}

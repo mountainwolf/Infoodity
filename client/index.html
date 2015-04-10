@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+<!--connects to infoodity module in app.js-->
 <html ng-app="infoodity">
 
 <head>
@@ -32,7 +33,7 @@
     <span class="col-md-6"></span>
     <span class="col-md-2 navbarSearch">
       <form>
-        <input type="text" name="restaurantName" placeholder="Restaurant Name">
+        <input type="text" name="restaurant-name" placeholder="Restaurant Name" ng-model="global-search">
         <input type="submit" value="Search" class="navbarbutton">
       </form>
     </span>
@@ -47,8 +48,8 @@
 
       <!--LEFT SPACER SPAN-->
       <span class="col-md-1"></span>
-
-      <span class="col-md-10 test" ui-view="content">
+      <!--CONTENT AREA-->
+      <span class="col-md-10 test" ui-view="main-content">
         <!--MAIN CONTENT SPAN - WILL REMOVE TEST CLASS-->
         <div class="row test">
           <p>Main content test test test</p>
@@ -65,12 +66,9 @@
           <p>Main content test test test</p>
           <p>Main content test test test</p>
           <p>Main content test test test</p>
-          
         </div>
-
-
         <!--SECONDARY CONTENT SPAN - WILL REMOVE TEST CLASS-->
-        <div class="row test" ui-view="nested content">
+        <div class="row test" ui-view="secondary-content">
           <p>Secondary content test test test</p>
           <p>Secondary content test test test</p>
           <p>Secondary content test test test</p>
@@ -90,12 +88,8 @@
           <p>Secondary content test test test</p>
           <p>Secondary content test test test</p>
           <p>Secondary content test test test</p>
-
-
         </div>
-
       </span>
-
       <!--RIGHT SPACER-->
       <span class="col-md-1"></span>
 
