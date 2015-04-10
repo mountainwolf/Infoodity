@@ -29,5 +29,8 @@
     "pg": "^4.3.0",
     "request": "^2.55.0",
     "supertest": "^0.15.0"
+  },
+  "scripts": {
+    "test": "node ./server/server.js & mocha test/server/routesSpec.js; RES=$?; kill %1 exit $RES;"
   }
 }
