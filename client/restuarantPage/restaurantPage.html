@@ -1,10 +1,11 @@
-<div id='container'>
+<div id='container' ng-controller='RestaurantController'>
   <ul class='results'>
-    <h3>Find an Eatery</h3>
+    <li class = 'restaurantInfo' ng-init='restaurant in data.restaurants'
+    <h3></h3>
     <input placeholder='Search Eaterys' ng-model='search'></input>
     <li class='result' ng-repeat="result in data.results | orderBy: 'name' | filter:search">
     <!-- TODO change ng-repeat statement acc. to data available -->
-      <a class='name' href="/api/restaurantPage/{{result.id}}">{{result.name}}</a>
+      <a class='name' href="client/restaurantPage/{{result.id}}">{{result.name}}</a>
       <p class='location'>Location: {{result.location}}</p>
     <!-- TODO change location relative to neighborhood/link to map/exact address -->
       <p class='price'>Price: {{result.price}}</p>
