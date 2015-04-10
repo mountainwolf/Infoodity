@@ -1,16 +1,18 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
+var routes = require('./routes/index');
 
 var port = process.env.PORT || 3000;
 
 // links to client side
 
 var app = express();
-
+app.set('views', path.join(__dirname, 'views'));
+app.use(bodyParser.json());
+app.use('/', routes);
 
 console.log('Now listening on ' + port);
 
 app.listen(port);
 
-app.use('/', express.static(path.join(__dirname, '../client')));
