@@ -17,7 +17,7 @@ module.exports = {
     });
   },
   restaurantReviews: function(query, cb) {
-    var queryStr = "SELECT reviews.rating, reviews.dish_name, reviews.text, reviews.image_url, users.user_name, restaurants.name FROM reviews INNER JOIN users ON reviews.user_id = users.id INNER JOIN restaurants ON reviews.restaurant_id = restaurants.id WHERE restaurant_id = " + query + ");";
+    var queryStr = "SELECT reviews.rating, reviews.dish_name, reviews.text, reviews.image_url, users.user_name, restaurants.name FROM reviews INNER JOIN users ON reviews.user_id = users.id INNER JOIN restaurants ON reviews.restaurant_id = restaurants.id WHERE restaurant_id = " + query + ";";
     pg.connect(dbUrl, function(err, client, done) {
       client.query(queryStr, function(err, result) {
         done();
