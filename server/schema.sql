@@ -1,3 +1,5 @@
+-- while running psql in the terminal, run '\i path/to/schema.sql' to generate db and tables locally
+
 CREATE DATABASE mountainwolf;
 \connect mountainwolf
 
