@@ -3,11 +3,13 @@ var someData =
   "restaurants" : [
     { "id": 1,
       "name": "asdf",
-      "location": "04917"
+      "location": "04917",
+      "price": 30
     },
     { "id": 2,
       "name": "second one",
-      "location": "04917"
+      "location": "04917",
+      "price": 50
     }
   ],
 

@@ -33,6 +33,20 @@ describe('', function() {
         .end(done);
     });
 
+    it('returns 200 for reviews', function(done) {
+      request(url)
+        .get('/api/reviews/1')
+        .expect(200)
+        .end(done);
+    });
+
+    it('returns 200 for restaurant', function(done) {
+      request(url)
+        .get('/api/restaurant/1')
+        .expect(200)
+        .end(done);
+    });
+
 
     it('returns 404 at root', function(done) {
         request(url)
