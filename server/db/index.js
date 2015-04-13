@@ -16,7 +16,6 @@ module.exports = {
       });
     });
   },
-
   restaurantInfo: function(id, cb) {
     var queryStr = "SELECT * FROM restaurants WHERE id = " + id + ";";
     pg.connect(dbUrl, function(err, client, done) {
