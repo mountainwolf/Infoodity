@@ -1,6 +1,6 @@
 angular.module['infoodity.searchResults', []]
 
-  .controller('ResultsController', function ($scope, Results){
+  .controller('ResultsController', function ($scope, Results, $location){
 
     $scope.data = {} // getData
 
@@ -16,6 +16,12 @@ angular.module['infoodity.searchResults', []]
 
     $scope.getResults();
 
-    $scope.changeView = function(view); // call getResults after controller is created
+    $scope.selectRestaurant = function(id){
+      Restaurant.getRestaurant(id)
+        .then(function(data) {
+
+        })
+    };
+
   });
 

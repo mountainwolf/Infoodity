@@ -12,23 +12,17 @@ angular.module('infoodity.services', [])
     });
   }
 
-  var getRestaurant = function(data){
-    return
-
-  }
-
   return {
     getResults: getResults;
-    getRestaurant: getRestaurant;
   }
 });
 
 .factory('Restaurant', function ('$http'){
 
-  var getRestaurant = function(restaurant){
+  var getRestaurant = function(id){
     return $http({
       method: 'GET',
-      url: '/api/results/' + restaurant
+      url: '/api/restaurant/' + id
     })
     .then(function(resp) {
       return resp.data;
