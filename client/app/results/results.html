@@ -1,0 +1,19 @@
+<div id='container'>
+  <ul class='results'>
+    <h3>Find an Eatery</h3>
+    <div class="row col-md-10 searchResult">
+      <div>
+        <li class='result' ng-repeat="result in data.results | orderBy: 'name' | filter:search">
+          <a href="#/restaurant/" + "result.id">
+            <span class="restaurantName">Restaurant Name {{result.name}}</span>
+            <span class="restaurantLocation pull-right">San Francisco, CA {{result.location}}</span>
+            <p class='price'>Price: {{result.price}}</p>
+            TEST
+          </a>
+        <!-- TODO change ng-repeat statement acc. to data available -->
+    <!-- TODO change location relative to neighborhood/link to map/exact address -->
+        </li>
+      </div>
+    </div>
+  </ul>
+</div>
