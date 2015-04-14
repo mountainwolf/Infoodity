@@ -1,0 +1,11 @@
+<div id='container'>
+  <ul class='restaurantinfo'>
+    <h3>{{result.name}}</h3>
+        <!-- TODO change ng-repeat statement acc. to data available -->
+    <a class='name' href="client/restaurantPage/{{result.id}}">{{result.name}}</a>
+    <p class='location'>Location: {{result.location}}</p>
+        <!-- TODO change location relative to neighborhood/link to map/exact address -->
+    <p class='price'>Price: {{result.price}}</p>
+    <button class='reviewsubmit' action='post'>Submit Reivew</button>
+  </ul>
+</div>

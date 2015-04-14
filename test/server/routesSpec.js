@@ -3,7 +3,6 @@ var expect = require('chai').expect;
 var bodyParser = require('body-parser');
 var path = require('path');
 
-
 // links to client side
 
 var url = "localhost:3000"
@@ -26,18 +25,25 @@ describe('', function() {
 
   describe('get api ', function() {
 
-    it('returns 200 for any path except root', function(done) {
+    it('returns 200 for search', function(done) {
       request(url)
-        .get('/api/something')
+        .get('/api/search?name=asdf')
         .expect(200)
         .end(done);
     });
 
-    it('returns 404 at root', function(done) {
-        request(url)
-          .get('/api/')
-          .expect(404)
-          .end(done);   
+    it('returns 200 for reviews', function(done) {
+      request(url)
+        .get('/api/reviews/1')
+        .expect(200)
+        .end(done);
+    });
+
+    it('returns 200 for restaurant', function(done) {
+      request(url)
+        .get('/api/restaurant/1')
+        .expect(200)
+        .end(done);
     });
 
 
@@ -45,7 +51,7 @@ describe('', function() {
         request(url)
           .get('/api/')
           .expect(404)
-          .end(done);   
+          .end(done);
     });
 
 
