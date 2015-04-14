@@ -2,12 +2,12 @@ var someData =
 {
   "restaurants" : [
     { "id": 1,
-      "name": "asdf",
+      "name": "The Sentinel",
       "location": "04917",
       "price": 30
     },
     { "id": 2,
-      "name": "second one",
+      "name": "asdf",
       "location": "04917",
       "price": 50
     }

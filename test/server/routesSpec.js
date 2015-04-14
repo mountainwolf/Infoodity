@@ -27,7 +27,7 @@ describe('', function() {
 
     it('returns 200 for search', function(done) {
       request(url)
-        .get('/api/search?name=asdf')
+        .get('/api/search?name=sentinel')
         .expect(200)
         .end(done);
     });
