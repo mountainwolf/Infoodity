@@ -43,7 +43,8 @@ module.exports = {
     });
   },
   postReview: function(user_id, restaurant_id, rating, dish_name, text, image_url, cb) {
-    var queryStr = "INSERT into reviews (user_id, restaurant_id, rating, dish_name, text, image_url) values ("+user_id+","+restaurant_id+","+rating+","+dish_name+","+text+","+image_url+");";
+    var queryStr = "INSERT into reviews (user_id, restaurant_id, rating, dish_name, text, image_url) values ("+user_id+","+restaurant_id+","+rating+",'"+dish_name+"','"+text+"','"+image_url+"');";
+    console.log(queryStr);
     pg.connect(dbUrl, function(err, client, done) {
       client.query(queryStr, function(err, result) {
         done();

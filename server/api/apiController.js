@@ -2,7 +2,7 @@ var data = require('../data/testData');
 var db = require('../db/index');
 var adapter = require('../data/adapter')
 
-var useDB = false;
+var useDB = true;
 
 module.exports = {
   getRestaurantsWithName: function(req, res, next) {
@@ -73,7 +73,8 @@ module.exports = {
   postReview: function(req, res, next) {
     if (useDB) {
       //user_id = 
-      db.postReview(1,1,1,"'a'","'a'","'Chicken_salad_sandwich_01.jpg'", function(rows) {
+      var info = req.body;
+      db.postReview(info.user_id,info.restaurant_id,info.rating,info.dish_name, info.text, info.image_url, function(rows) {
         res.status(202).end();
       } );
     } else {
