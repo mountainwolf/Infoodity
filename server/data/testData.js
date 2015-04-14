@@ -14,36 +14,47 @@ var someData =
   ],
 
   "reviews": [
-
     {
-      "id": 1,
+      "rating": 3,
       "restaurantID": 1,
-      "dishname": "hamburger",
+      "dish_name": "hamburger",
       "stars": 4,
-      "reviewText": "I like the hamburger which tasted good and very much like a hamburger."
+      "text": "I like the hamburger which tasted good and very much like a hamburger.",
+      "image_url":"http://static1.squarespace.com/static/5181d5b7e4b07b8c66ed5614/t/528eeee2e4b0fc15797f8ebf/1385098979427/chicken.jpg",
+      "user_name": "guest",
+      "name": "The Sentinel"
     },
 
     {
-      "id": 2,
+      "rating": 3,
+      "restaurantID": 2,
+      "dish_name": "pizza",
+      "stars": 4,
+      "text": "Ih tasted good and very much like a hamburger.",
+      "image_url":"http://static1.squarespace.com/static/5181d5b7e4b07b8c66ed5614/t/528eeee2e4b0fc15797f8ebf/1385098979427/chicken.jpg",
+      "user_name": "guest",
+      "name": "asdf"
+    },
+    {
+      "rating": 3,
       "restaurantID": 1,
-      "dishname": "hotdog",
-      "stars": 1,
-      "reviewText": "I did not like the hot dog which tasted bad and very much like a bad hot dog."
-    },
-    {
-      "id": 1,
-      "restaurantID": 2,
-      "dishname": "hamburger",
+      "dish_name": "foods",
       "stars": 4,
-      "reviewText": "hi2"
+      "text": "I like foods hich tasted good and very much like a foods.",
+      "image_url":"http://static1.squarespace.com/static/5181d5b7e4b07b8c66ed5614/t/528eeee2e4b0fc15797f8ebf/1385098979427/chicken.jpg",
+      "user_name": "guest",
+      "name": "The Sentinel"
     },
 
     {
-      "id": 2,
+      "rating": 3,
       "restaurantID": 2,
-      "dishname": "hotdog",
-      "stars": 1,
-      "reviewText": "hi2"
+      "dish_name": "hadguk",
+      "stars": 4,
+      "text": "I like the afsdhj; which tasted good and very much like a afdsh;.",
+      "image_url":"http://static1.squarespace.com/static/5181d5b7e4b07b8c66ed5614/t/528eeee2e4b0fc15797f8ebf/1385098979427/chicken.jpg",
+      "user_name": "guest",
+      "name": "asdf"
     }
 
   ]
