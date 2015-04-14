@@ -3,7 +3,6 @@ var expect = require('chai').expect;
 var bodyParser = require('body-parser');
 var path = require('path');
 
-
 // links to client side
 
 var url = "localhost:3000"
@@ -52,7 +51,7 @@ describe('', function() {
         request(url)
           .get('/api/')
           .expect(404)
-          .end(done);   
+          .end(done);
     });
 
 
