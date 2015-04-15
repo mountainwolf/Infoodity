@@ -9,4 +9,3 @@ require('./config/middleware.js')(app, express);
 console.log('Now listening on ' + port);
 
 app.listen(port);
-
