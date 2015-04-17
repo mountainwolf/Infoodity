@@ -1,4 +1,4 @@
-    infoodity.controller('ResultsController',['$scope', 'Results', '$location', '$log', function ($scope, Results, $location, $log){
+    infoodity.controller('ResultsController',['$scope', 'Search', '$location', '$log', function ($scope, Results, $location, $log){
       $log.log('Hello!');
 //      var nameSearched = $location.path().split('=').pop();
 //
