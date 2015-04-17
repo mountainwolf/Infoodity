@@ -13,4 +13,7 @@ module.exports = function (app) {
 
   app.route('/')
      .post(apiController.postReview);
+
+  app.route('/image')
+     .post(apiController.uploadImage);
 }
