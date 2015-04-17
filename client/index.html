@@ -10,12 +10,7 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,300,600,400' rel='stylesheet' type='text/css'>
-
-</head>
-
-<body>
-
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:700,300,600,400" rel="stylesheet" type="text/css">
   <script src="lib/jquery/dist/jquery.min.js"></script>
   <script src="lib/angular/angular.min.js"></script>
   <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -26,6 +21,9 @@
   <script src="app/reviews/reviews.js"></script>
   <script src="app/services/services.js"></script>
   <script src="app/submitReview/submitReview.js"></script>
+</head>
+
+<body>
 
 
 
@@ -41,9 +39,9 @@
     </span>
     <span class="col-md-5"></span>
     <span class="col-md-3 navbarSearch">
-      <form>
+      <form ng-controller="searchRestaurant">
         <input type="text" name="restaurant-name" placeholder="Restaurant Name" ng-model="search">
-        <input type="submit" value="Search" class="navbarbutton">
+        <input type="submit" value="Search" class="navbarbutton" ng-click="submit()">
       </form>
     </span>
     <span class="col-md-1 spacer"></span>

@@ -1,10 +1,16 @@
 
 var infoodity = angular.module('infoodity', ['ui.router'])
   
-.controller('searchRestaurant', ['$scope', function($scope){
-
+.controller('searchRestaurant', ['$scope', 'Search', function($scope, Search){
+  
   $scope.submit = function() {
-    $scope.text;
+    Search.search($scope.search)
+    .then(function(data) {
+      $state.go('restaurantResults');
+    })
+    .catch(function(err){
+      console.log(err);
+    })
   }
 }]);
 

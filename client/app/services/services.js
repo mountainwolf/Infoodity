@@ -1,26 +1,33 @@
-angular.module('infoodity.services', [])
+//angular.module('infoodity.services', [])
 
-  .factory('Results', function ($http) {
+  infoodity.factory('Search', function ($http) {
+    var _results = {};
 
-    var getResults = function(name){
-      console.log('getResults')
-      return $http({
+    var search = function(query) {
+      console.log('in search()');
+      $http({
         method: 'GET',
         url: '/api/search',
-        params: {name: name}
+        params: {query: query}
       })
       .then(function(resp) {
         console.log(resp);
-        return resp.data;
+        _results = resp.data;
       });
-    }
+    };
+
+    var results = function() {
+      console.log('in results()');
+      return _results;
+    };
 
     return {
-      getResults: getResults
-    }
+      search: search,
+      results: results
+    };
   })
 
-  .factory('Restaurant', function ($http){
+  infoodity.factory('Restaurant', function ($http){
 
     var getRestaurant = function(id){
       return $http({
@@ -37,8 +44,8 @@ angular.module('infoodity.services', [])
     }
   })
 
-  .factory('Reviews', function ($http){
-
+  infoodity.factory('Reviews', function ($http){
+    
     var getReviews = function(id){
       return $http({
         method: 'GET',
