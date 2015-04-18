@@ -1,15 +1,15 @@
-var someData = 
+var someData =
 {
   "restaurants" : [
     { "id": 1,
       "name": "The Sentinel",
       "location": "04917",
-      "price": 30
+      "price": "$$"
     },
     { "id": 2,
       "name": "asdf",
       "location": "04917",
-      "price": 50
+      "price": "$$$"
     }
   ],
 

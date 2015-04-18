@@ -1,6 +1,6 @@
 var pg = require('pg');
 
-var dbUrl = process.env.DATABASE_URL || 'postgres://trevorcaverly:@localhost/mountainwolf';
+var dbUrl = process.env.DATABASE_URL || 'postgres://username:@localhost/mountainwolf';
 
 module.exports = {
   search: function(query, cb) {

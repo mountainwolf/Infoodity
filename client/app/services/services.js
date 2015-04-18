@@ -2,7 +2,7 @@ infoodity.factory('Search', function ($http) {
   var _results = {};
 
   var search = function(query) {
-    $http({
+    return $http({
       method: 'GET',
       url: '/api/search',
       params: {query: query}
