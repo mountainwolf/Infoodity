@@ -1,6 +1,19 @@
 
 var infoodity = angular.module('infoodity', ['ui.router'])
   
+.controller('searchRestaurant', ['$scope', '$state', 'Search', function($scope, $state, Search){
+  
+  $scope.submit = function() {
+//    Search.search($scope.search)
+//    .then(function(data) {
+//      $state.go('restaurantResults');
+//    })
+//    .catch(function(err){
+//      console.log(err);
+//    })
+    $state.go('restaurantResults');
+  }
+}]);
 
 infoodity.config(function($stateProvider, $urlRouterProvider) {
     

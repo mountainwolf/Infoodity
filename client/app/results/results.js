@@ -1,5 +1,28 @@
-    infoodity.controller('ResultsController',['$scope', 'Results', '$location', '$log', function ($scope, Results, $location, $log){
-      $log.log('Hello!');
+    infoodity.controller('ResultsController',['$scope', 'Search', function ($scope, Search){
+//      $scope.results = Search.results()
+      $scope.results =  [{ "id": 1,
+                              "name": "The Sentinel",
+                              "location": "04917",
+                              "price": 30
+                            },
+                            { "id": 2,
+                              "name": "asdf",
+                              "location": "04917",
+                              "price": 50
+                            }];
+    }]);
+
+
+//set click event listener to route to restaurant reviews page using service that uses the restaurant/:id path to re-route.
+//once I get the review data back populate the second-view with review data.
+
+
+
+
+
+
+
+
 //      var nameSearched = $location.path().split('=').pop();
 //
 //      $scope.data = {} // getData
@@ -20,4 +43,3 @@
 //      $scope.getResults(nameSearched);
 
   // reroute to restaurant page
-    }]);
