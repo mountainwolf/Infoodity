@@ -36,7 +36,7 @@ infoodity.factory('Restaurant', function ($http){
   return {
     getRestaurant: getRestaurant
   }
-})
+});
 
 infoodity.factory('Reviews', function ($http){
   var getReviews = function(id){
@@ -52,7 +52,4 @@ infoodity.factory('Reviews', function ($http){
   return {
     getReviews: getReviews
   }
-})
-
-
-
+});

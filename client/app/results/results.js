@@ -24,12 +24,6 @@ infoodity.controller('ResultsController',['$scope', 'Search', function ($scope, 
 //once I get the review data back populate the second-view with review data.
 
 
-
-
-
-
-
-
 //      var nameSearched = $location.path().split('=').pop();
 //
 //      $scope.data = {} // getData
