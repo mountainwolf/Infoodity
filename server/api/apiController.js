@@ -9,32 +9,32 @@ var useDB = true;
 
 module.exports = {
   getRestaurantsWithName: function(req, res, next) {
-    
+
     if (useDB) {
-      db.search(req.query.name, function(rows){
+      db.search(req.query.query, function(rows){
         var result = adapter.restaurantsFromSearch(rows)
         res.end(JSON.stringify(result));
-      }); 
+      });
     } else {
       var restaurants = data.data.restaurants;
       var list = [];
       restaurants.forEach(function(restaurant){
-        if (restaurant.name === req.query.name) {
+        if (restaurant.name === req.query.query) {
           list.push(restaurant);
         }
       })
 
       res.end(JSON.stringify(list));
     }
-    
-    
+
+
   },
 
   getRestaurantWithID: function(req, res, next) {
     if (useDB){
       db.restaurantInfo(Number(req.params.id), function(rows){
         var result = adapter.restaurantsFromSearch(rows[0])
- 
+
         res.end(JSON.stringify(result));
       });
 
@@ -55,7 +55,7 @@ module.exports = {
   getReviewsWithRestaurantID: function(req, res, next) {
     if (useDB) {
       db.restaurantReviews(Number(req.params.id), function(rows){
-        var result = adapter.restaurantsFromSearch(rows) 
+        var result = adapter.restaurantsFromSearch(rows)
         res.end(JSON.stringify(rows));
       });
     } else {
