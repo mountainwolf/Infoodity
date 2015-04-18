@@ -1,6 +1,9 @@
 var data = require('../data/testData');
 var db = require('../db/index');
 var adapter = require('../data/adapter')
+var image_uploader = require('../cloudinary/upload');
+var fs = require('fs');
+var multiparty = require('multiparty');
 
 var useDB = true;
 
@@ -72,7 +75,6 @@ module.exports = {
 
   postReview: function(req, res, next) {
     if (useDB) {
-      //user_id = 
       var info = req.body;
       db.postReview(info.user_id,info.restaurant_id,info.rating,info.dish_name, info.text, info.image_url, function(rows) {
         res.status(202).end();
@@ -80,6 +82,24 @@ module.exports = {
     } else {
       res.status(202).send('post request was heard');
     }
+  },
+
+  uploadImage: function(req, res, next) {
+
+    var stream = image_uploader.upload_stream(function(result) {
+        res.end(JSON.stringify(result));
+        });
+
+    var form = new multiparty.Form();
+
+    form.parse(req, function(err, fields, files){
+      fs.createReadStream(files.image[0].path)
+        .pipe(stream)
+
+  })
+
+
+
   }
 
 }
