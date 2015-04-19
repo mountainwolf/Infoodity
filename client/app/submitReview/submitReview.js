@@ -1,6 +1,5 @@
 infoodity.controller('SubmitReviewController', ['$scope', 'Reviews', 'Restaurant', function($scope, Reviews, Restaurant) {
   var data = {
-
     file: $scope.img,
     dish_name: $scope.dishname,
     text: $scope.review,
