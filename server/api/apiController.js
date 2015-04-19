@@ -5,7 +5,7 @@ var image_uploader = require('../cloudinary/upload');
 var fs = require('fs');
 var multiparty = require('multiparty');
 
-var useDB = false;
+var useDB = true;
 
 module.exports = {
   getRestaurantsWithName: function(req, res, next) {
