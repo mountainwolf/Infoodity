@@ -56,6 +56,7 @@ infoodity.config(function($stateProvider, $urlRouterProvider) {
         'main-content': {
           templateUrl: 'app/submitReview/submitReview.html',
           controller: 'SubmitReviewController'
-        },
+        }
+      }
     })
 });
