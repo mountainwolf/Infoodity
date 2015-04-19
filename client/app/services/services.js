@@ -23,19 +23,26 @@ infoodity.factory('Search', function ($http) {
 });
 
 infoodity.factory('Restaurant', function ($http){
-  var getRestaurant = function(id){
+  var _restaurant = {};
+  
+  var setRestaurant = function(id){
     return $http({
       method: 'GET',
       url: '/api/restaurant/' + id
     })
     .then(function(resp) {
-      return resp.data;
+      _restaurant = resp.data;
     });
-  }
+  };
 
+  var getRestaurant = function() {
+    return _restaurant;
+  };
+  
   return {
-    getRestaurant: getRestaurant
-  }
+    getRestaurant: getRestaurant,
+    setRestaurant: setRestaurant
+  };
 });
 
 infoodity.factory('Reviews', function ($http){
@@ -47,9 +54,9 @@ infoodity.factory('Reviews', function ($http){
     .then(function(resp) {
       return resp.data;
     });
-  }
+  };
 
   return {
     getReviews: getReviews
-  }
+  };
 });

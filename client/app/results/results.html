@@ -1,4 +1,4 @@
-<div class="row search-result" ng-repeat="restaurant in results | orderBy: 'name' | filter:search">
+<div class="row search-result" ng-repeat="restaurant in results | orderBy: 'name' | filter:search" ng-click="selection(restaurant)">
   <div>
     <a class="restaurant-name" href="#/restaurant/{{results.id}}">{{restaurant.name}}</a>
     <span class="restaurant-location pull-right">{{restaurant.location}}</span>

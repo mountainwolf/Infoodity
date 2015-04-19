@@ -6,7 +6,11 @@ var infoodity = angular.module('infoodity', ['ui.router'])
   $scope.submit = function() {
     Search.search($scope.query)
     .then(function() {
-      $state.go('restaurantResults');
+      if( $state.is('restaurantResults')) {
+        $state.reload();
+      } else {
+        $state.go('restaurantResults');
+      }
     });
   };
 }]);
@@ -38,22 +42,18 @@ infoodity.config(function($stateProvider, $urlRouterProvider) {
       'views': {
         'main-content': {
           templateUrl: 'app/restaurantPage/restaurantPage.html',
-    //    controller: 'restaurantPage/restaurantPage.js'
+          controller: 'RestaurantController'
         },
         'secondary-content': {
           templateUrl: 'app/reviews/reviews.html',
-  //      controller: 'reviews/reviews.js'
+          controller: 'ReviewsController'
         }
       }
     })
-//    .state('reviews', {
-//      parent: 'restaurantPage',
-//      url: '/reviews'
-//    })
-//     .state('post', {
-//      url: '/results',
-//      parent: 'restaurantPage',
-//      templateUrl: 'results/results.html',
-//      controller: 'results/results.js'
-//    })
+    .state('post', {
+      url: '/results',
+      parent: 'restaurantPage',
+      templateUrl: 'app/results/results.html',
+      controller: 'app/results/results.js'
+    })
 });
