@@ -51,9 +51,11 @@ infoodity.config(function($stateProvider, $urlRouterProvider) {
       }
     })
     .state('post', {
-      url: '/results',
-      parent: 'restaurantPage',
-      templateUrl: 'app/results/results.html',
-      controller: 'app/results/results.js'
+      url: '/post',
+      'views': {
+        'main-content': {
+          templateUrl: 'app/submitReview/submitReview.html',
+          controller: 'SubmitReviewController'
+        },
     })
 });
