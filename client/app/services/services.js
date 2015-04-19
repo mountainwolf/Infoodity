@@ -24,8 +24,8 @@ infoodity.factory('Search', function ($http) {
 
 infoodity.factory('Restaurant', function ($http){
   var _restaurant = {};
-  
-  var setRestaurant = function(id){
+
+  var setRestaurant = function(id) {
     return $http({
       method: 'GET',
       url: '/api/restaurant/' + id
@@ -38,7 +38,7 @@ infoodity.factory('Restaurant', function ($http){
   var getRestaurant = function() {
     return _restaurant;
   };
-  
+
   return {
     getRestaurant: getRestaurant,
     setRestaurant: setRestaurant
@@ -46,7 +46,7 @@ infoodity.factory('Restaurant', function ($http){
 });
 
 infoodity.factory('Reviews', function ($http){
-  var getReviews = function(id){
+  var getReviews = function(id) {
     return $http({
       method: 'GET',
       url: '/api/reviews/' + id
@@ -56,7 +56,19 @@ infoodity.factory('Reviews', function ($http){
     });
   };
 
+  var postReview = function(formData) {
+    return $http({
+      method: 'POST',
+      url: 'api/',
+      data: formData
+    })
+    .then(function(resp) {
+      return resp.data;
+    });
+  };
+
   return {
-    getReviews: getReviews
+    getReviews: getReviews,
+    postReview: postReview
   };
 });
