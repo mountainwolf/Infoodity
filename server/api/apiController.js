@@ -84,22 +84,25 @@ module.exports = {
     }
   },
 
-  uploadImage: function(req, res, next) {
-
-    var stream = image_uploader.upload_stream(function(result) {
-        res.end(JSON.stringify(result));
-        });
-
+  postFullReview: function(req, res, next) {
     var form = new multiparty.Form();
 
+    var stream = image_uploader.upload_stream(function(result) {
+          console.log(result);
+          req.body.image_url = result.url;
+          module.exports.postReview(req, res, next) 
+        });
+
     form.parse(req, function(err, fields, files){
-      fs.createReadStream(files.image[0].path)
+      for (var key in fields) {
+        req.body[key] = fields[key][0];
+      }
+      fs.createReadStream(files.file[0].path)
         .pipe(stream)
 
-  })
-
-
+    })
 
   }
 
 }
+
