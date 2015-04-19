@@ -1,14 +1,13 @@
 infoodity.controller('SubmitReviewController', ['$scope', 'Post', 'Restaurant', function ($scope, Post, Restaurant){
   var data = {
-    dish_name: $scope.dish,
-    image_url: $scope.img, //I don't think this will work...this might even be a seperate post request.
-    name: $scope.name,
-    rating: $scope.stars, //this may be retrieved from ng-click event.
-    restaurantID: Restaurant.getRestaurant().id,
-    stars: $scope.stars //how does this differ from rating property? (copied from testdata object)
+    file: $scope.img,
+    dish_name: $scope.dishname,
     text: $scope.review,
-    user_name: $scope.user
+    rating: $scope.stars, //this may be retrieved from ng-click event.
+    restaurant_id: Restaurant.getRestaurant().id,
+    user_id: 1
   }
   Post(data);
+
 }]);
 
