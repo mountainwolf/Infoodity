@@ -88,7 +88,6 @@ module.exports = {
     var form = new multiparty.Form();
 
     var stream = image_uploader.upload_stream(function(result) {
-          console.log(result);
           req.body.image_url = result.url;
           module.exports.postReview(req, res, next) 
         });
@@ -105,4 +104,7 @@ module.exports = {
   }
 
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> [feat] remove comments
