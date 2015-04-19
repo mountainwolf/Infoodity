@@ -1,6 +1,4 @@
-angular.module('infoodity.submitReview', [])
-
-.controller('SubmitReviewController', ['$scope', 'Post', 'Restaurant', function ($scope, Post, Restaurant){
+infoodity.controller('SubmitReviewController', ['$scope', 'Post', 'Restaurant', function ($scope, Post, Restaurant){
   var data = {
     dish_name: $scope.dish,
     image_url: $scope.img, //I don't think this will work...this might even be a seperate post request.
