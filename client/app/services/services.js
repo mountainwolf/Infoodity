@@ -1,4 +1,4 @@
-infoodity.factory('Search', function ($http) {
+infoodity.factory('Search', function($http) {
   var _results = {};
 
   var search = function(query) {
@@ -22,7 +22,7 @@ infoodity.factory('Search', function ($http) {
   };
 });
 
-infoodity.factory('Restaurant', function ($http){
+infoodity.factory('Restaurant', function($http) {
   var _restaurant = {};
 
   var setRestaurant = function(id) {
@@ -45,7 +45,7 @@ infoodity.factory('Restaurant', function ($http){
   };
 });
 
-infoodity.factory('Reviews', function ($http){
+infoodity.factory('Reviews', function($http) {
   var getReviews = function(id) {
     return $http({
       method: 'GET',
