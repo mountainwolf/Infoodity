@@ -104,7 +104,4 @@ module.exports = {
   }
 
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> [feat] remove comments
