@@ -23,8 +23,9 @@ infoodity.config(function($stateProvider, $urlRouterProvider) {
     .state('home', {
       url: '/home',
       views: {
-        'main-content': {
-          template: '<h1> Welcome! Please Choose a Restaurant Above </h1>'
+        'landing-area': {
+          templateUrl: 'app/landingPage/landingPage.html',
+          controller: 'LandingPageController',
         }
       }
     })
