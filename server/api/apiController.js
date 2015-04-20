@@ -5,7 +5,7 @@ var image_uploader = require('../cloudinary/upload');
 var fs = require('fs');
 var multiparty = require('multiparty');
 
-var useDB = true;
+var useDB = false;
 
 module.exports = {
   getRestaurantsWithName: function(req, res, next) {
@@ -90,7 +90,6 @@ module.exports = {
     var stream = image_uploader.upload_stream(function(result) {
           req.body.image_url = result.url;
           module.exports.postReview(req, res, next);
-        });
 
     form.parse(req, function(err, fields, files){
       for (var key in fields) {
