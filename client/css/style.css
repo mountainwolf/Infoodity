@@ -70,13 +70,11 @@ input {
 }
 
 .search-result {
-  height: 75px;
+  height: 50px;
   background-color: #E6E6E6;
   color: #000;
   margin-top: 4px;
   margin-bottom: 4px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .restaurant-info {
@@ -100,12 +98,10 @@ input {
 
 .restaurant-location {
   font-size: 1.55em;
-  text-align: right;
 }
 
 .restaurant-price {
   font-size: 1.55em;
-  text-align: right;
 }
 
 .glyphicon {
@@ -183,4 +179,9 @@ input {
 
 .review-image {
   max-width: 600px;
+}
+
+.column-headings span {
+  font-size: 1.4em;
+  font-weight: 700;
 }
