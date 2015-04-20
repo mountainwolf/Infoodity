@@ -18,51 +18,27 @@ a:hover {
   text-decoration: none;
 }
 
-input {
+.form-control {
   border: none;
+  border-radius: 0;
 }
 
-#navbar {
+.navbar {
+  color: #337ab7;
   background-color: #E6E6E6;
-  margin-bottom: 10px;
+  padding: 20px 80px;
+  margin-bottom: 20px;
 }
 
-#navbar h1 {
+#logo {
   font-weight: 300;
   font-size: 3em;
-  margin: .55em 0;
+  color: #337ab7;
 }
 
-#navbar a {
-  text-decoration: none;
-}
-
-.navbarbutton {
-  border: none;
-  background: #FFF;
-  padding: 0px;
-  margin-top: 40px;
-  padding: 0px 10px 0px 10px;
-  margin-left: 5px;
-  color: #337AB7;
-}
-
-.navbarbutton:hover {
-  color: #FFF;
-  background: #337AB7;
-  border: none;
-}
-
-.navbarSearch {
-  float: right;
-  height: 100%;
-  padding: 2px;
-}
-
-.spacer {
-  height: 100%;
-  padding: 2px;
-  position: relative;
+.main-container {
+  margin-top: 100px;
+  padding: 10px;
 }
 
 .test {
@@ -83,8 +59,7 @@ input {
   color: #000;
   margin-top: 4px;
   margin-bottom: 4px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 20px;
 }
 
 .restaurant-name {
@@ -108,16 +83,15 @@ input {
   font-size: 1.5em;
 }
 
-.reviewsubmit {
+.btn {
   vertical-align: bottom;
   border: none;
   background: #FFF;
   color: #337AB7;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  border-radius: 0;
 }
 
-.reviewsubmit:hover {
+.btn:hover {
   color: #FFF;
   background: #337AB7;
   border: none;
@@ -162,14 +136,12 @@ input {
 }
 
 .submit-form {
-  height: 75px;
+  height: auto;
   background-color: #E6E6E6;
   color: #000;
   margin-top: 4px;
   margin-bottom: 4px;
-  padding-left: 20px;
-  padding-right: 20px;
-  height: 500px;
+  padding: 20px;
 }
 
 .review-textbox {

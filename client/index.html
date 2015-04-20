@@ -7,7 +7,7 @@
   <meta charset="utf-8" />
   <title>infoodity</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:700,300,600,400" rel="stylesheet" type="text/css">
   <script src="lib/jquery/dist/jquery.min.js"></script>
   <script src="lib/angular/angular.min.js"></script>
@@ -23,34 +23,32 @@
 
 <body>
   <!-- NAVBAR -->
-  <div class="col-md-12 navbar-default" id="navbar">
-    <span class="col-md-1 spacer"></span>
-    <span class="col-md-2">
-      <h1>
-        <a ui-sref="home">
-          <span id="logo1">infoodity</span>
-        </a>
-      </h1>
-    </span>
-    <span class="col-md-5"></span>
-    <span class="col-md-3 navbarSearch">
-      <form ng-controller="searchRestaurant">
-        <input type="text" ng-model="query" placeholder="Restaurant Name">
-        <input type="submit" value="Search" class="navbarbutton" ng-click="submit()">
+  <nav class="navbar navbar-fixed-top navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand" id="logo" ui-sref="home">infoodity</a>
+      </div>
+
+      <form class="navbar-form navbar-right" role="search" ng-controller="searchRestaurant">
+        <div class="form-group">
+          <input type="text" class="form-control" ng-model="query" placeholder="Restaurant Name">
+          <button type="submit" class="btn" ng-click="submit()">Submit</button>
+        </div>
       </form>
-    </span>
-    <span class="col-md-1 spacer"></span>
-  </div>
+    </div><!-- /.container-fluid -->
+  </nav>
 
   <!--CONTENT DIV -->
-  <div class="col-md-12">
+  <div class="main-container">
+    <div class="col-md-12">
       <!--LEFT SPACER SPAN-->
       <span class="col-md-1"></span>
       <!--CONTENT AREA-->
       <span class="col-md-10">
         <!--MAIN CONTENT SPAN-->
         <div class="row" ui-view="main-content">
-          
+
         </div>
         <!--SECONDARY CONTENT SPAN-->
         <div class="row" ui-view="secondary-content">
@@ -59,6 +57,8 @@
       </span>
       <!--RIGHT SPACER-->
       <span class="col-md-1"></span>
+    </div>
+
   </div>
 
 </body>
