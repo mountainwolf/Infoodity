@@ -1,14 +1,20 @@
 <div class="row submit-form">
 
-  <form>
-    <h4>Upload Image:</h4>
-    <input type="file">
-    <br></br>
-    <h4>Write a Review:</h4>
-    <!--If we add star divs/spans I can set an ng-click to collect star rating data and send the data in the post request.-->
-    <textarea class="review-textbox" ng-model="review"></textarea>
-    <button class="review-submit-button" type="submit" ng-click="submit()">Submit</button>
 
-  </form>
+    <h4>Upload Image:</h4>
+    <input type="file" name="image" class="image"></input>
+    <br></br>
+    <h4>Dish Name:</h4>
+    <textarea class="review-dishname" ng-model="dishname"></textarea>
+    <h4>Review:</h4>
+    <textarea class="review-textbox" ng-model="review"></textarea>
+    <h4>Out of 5 stars, this dish was a..</h4>
+    <textarea class="review-dishname" ng-model="stars"></textarea>
+    <br></br>
+
+    <button class="review-submit-button" ng-click="sendReview()">Submit</button>
+
 
 </div>
+
+

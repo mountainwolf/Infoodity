@@ -1,6 +1,6 @@
 var data = require('../data/testData');
 var db = require('../db/index');
-var adapter = require('../data/adapter')
+var adapter = require('../data/adapter');
 var cloudinary = require('../cloudinary/upload');
 var fs = require('fs');
 var imageUtils = require('../cloudinary/utils');
@@ -10,10 +10,9 @@ var useDB = true;
 
 module.exports = {
   getRestaurantsWithName: function(req, res, next) {
-
     if (useDB) {
       db.search(req.query.query, function(rows){
-        var result = adapter.restaurantsFromSearch(rows)
+        var result = adapter.restaurantsFromSearch(rows);
         res.end(JSON.stringify(result));
       });
     } else {
@@ -23,31 +22,25 @@ module.exports = {
         if (restaurant.name === req.query.query) {
           list.push(restaurant);
         }
-      })
-
+      });
       res.end(JSON.stringify(list));
     }
-
-
   },
 
   getRestaurantWithID: function(req, res, next) {
     if (useDB){
       db.restaurantInfo(Number(req.params.id), function(rows){
-        var result = adapter.restaurantsFromSearch(rows[0])
-
+        var result = adapter.restaurantsFromSearch(rows[0]);
         res.end(JSON.stringify(result));
       });
-
     } else {
       var restaurants = data.data.restaurants;
       var list = [];
       restaurants.forEach(function(restaurant) {
-
         if (restaurant.id === Number(req.params.id)) {
           list.push(restaurant);
         }
-      })
+      });
       var result = adapter.restaurantsFromQuery(list[0]);
       res.end(JSON.stringify(result));
     }
@@ -56,21 +49,21 @@ module.exports = {
   getReviewsWithRestaurantID: function(req, res, next) {
     if (useDB) {
       db.restaurantReviews(Number(req.params.id), function(rows){
-        var result = adapter.restaurantsFromSearch(rows)
+        var result = adapter.restaurantsFromSearch(rows);
         res.end(JSON.stringify(rows));
       });
     } else {
-        var reviews = data.data.reviews;
+      var reviews = data.data.reviews;
 
-        var list = [];
-        var id = Number(req.params.id);
-        reviews.forEach(function(review) {
-          if (review.restaurantID === id) {
-            list.push(review);
-          }
-        })
-        var result = adapter.reviewsFromQuery(list);
-        res.end(JSON.stringify(result));
+      var list = [];
+      var id = Number(req.params.id);
+      reviews.forEach(function(review) {
+        if (review.restaurantID === id) {
+          list.push(review);
+        }
+      })
+      var result = adapter.reviewsFromQuery(list);
+      res.end(JSON.stringify(result));
     }
   },
 
@@ -89,17 +82,17 @@ module.exports = {
     var form = new multiparty.Form();
 
     var stream = cloudinary.upload_stream(function(result) {
-          req.body.url = imageUtils.resizedImageURL(result.url, 600);
+      req.body.image_url = imageUtils.resizedImageURL(result.url, 600);
 
-          module.exports.postReview(req, res, next) 
-        });
+      module.exports.postReview(req, res, next);
+    });
 
     form.parse(req, function(err, fields, files){
       for (var key in fields) {
         req.body[key] = fields[key][0];
       }
       fs.createReadStream(files.file[0].path)
-        .pipe(stream)
+        .pipe(stream);
 
     })
 

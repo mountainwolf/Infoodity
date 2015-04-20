@@ -62,15 +62,3 @@ module.exports = {
   },
 
 };
-
-// CREATE TABLE "reviews" (
-// "id"  SERIAL NOT NULL ,
-// "timestamp" TIMESTAMP NOT NULL DEFAULT current_timestamp ,
-// "user_id" INTEGER NOT NULL ,
-// "restaurant_id" INTEGER NOT NULL ,
-// "rating" INTEGER NOT NULL ,
-// "dish_name" TEXT NOT NULL ,
-// "text" TEXT NOT NULL ,
-// "image_url" TEXT NOT NULL ,
-// PRIMARY KEY ("id")
-// );

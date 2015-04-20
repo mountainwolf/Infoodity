@@ -61,8 +61,9 @@ infoodity.factory('Reviews', function($http) {
       method: 'POST',
       url: 'api/review',
       processData: false,
-      contentType: false,
-      data: formData
+      data: formData,
+      transformRequest:angular.identity,
+      headers:{'Content-Type':undefined}
     })
     .then(function(resp) {
       return resp.data;
