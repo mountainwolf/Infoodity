@@ -180,3 +180,7 @@ input {
   width: 100%;
   height: 200px;
 }
+
+.review-image {
+  max-width: 600px;
+}
