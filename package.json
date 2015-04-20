@@ -31,6 +31,8 @@
   },
   "scripts": {
     "test": "node ./server/server.js & mocha test/server/routesSpec.js; RES=$?; kill %1 exit $RES;",
-    "start": "nodemon ./server/server.js"
+    "start": "node ./server/server.js",
+    "postinstall": "bower install",
+    "startnodemon": "nodemon ./server/server.js"
   }
 }
