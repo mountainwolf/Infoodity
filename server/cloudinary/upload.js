@@ -1,10 +1,13 @@
-var cloudAPI = require("./apikey");
+if (!process.env.CLOUD_NAME) {
+  var cloudAPI = require("./apikey");  
+}
+
 var cloudinary = require("cloudinary");
 
 cloudinary.config({
-  cloud_name: cloudAPI.cloudname,
-  api_key: cloudAPI.key,
-  api_secret: cloudAPI.secret
+  cloud_name: process.env.CLOUD_NAME|| cloudAPI.cloudname,
+  api_key: process.env.CLOUD_KEY || cloudAPI.key,
+  api_secret: process.env.CLOUD_SECRET || cloudAPI.secret
 });
 
 exports.uploadFromFilePath = function(path, cb) {
