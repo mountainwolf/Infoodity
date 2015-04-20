@@ -6,7 +6,7 @@ var fs = require('fs');
 var imageUtils = require('../cloudinary/utils');
 var multiparty = require('multiparty');
 
-var useDB = true;
+var useDB = false;
 
 module.exports = {
   getRestaurantsWithName: function(req, res, next) {

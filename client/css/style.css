@@ -177,8 +177,7 @@ a:hover {
 }
 
 .landing-message-box {
-  background: #000;
-  opacity: .7;
+  background: rgba(0,0,0,0.7);
   margin-top: 100px;
   margin-bottom: 10px;
   padding-top: 75px;
@@ -198,7 +197,7 @@ a:hover {
 }
 
 .landing-section-grey {
-  background-color: #E6E6E6;
+  background-color: #D2D2D2;
   padding-bottom: 150px;
   padding-top: 50px;
   height: auto;
