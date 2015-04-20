@@ -1,11 +1,11 @@
 var pg = require('pg');
-var escape = require('pg-escape').escape;
+var sanitize = require('./utils').sanitize
 
 var dbUrl = process.env.DATABASE_URL || 'postgres://username:@localhost/mountainwolf';
 
 module.exports = {
   search: function(query, cb) {
-    var queryStr = "SELECT * FROM restaurants WHERE LOWER(name) like LOWER('%" + query + "%');";
+    var queryStr = "SELECT * FROM restaurants WHERE LOWER(name) like LOWER('%" + sanitize(query) + "%');";
     pg.connect(dbUrl, function(err, client, done) {
       client.query(queryStr, function(err, result) {
         done();
@@ -48,10 +48,11 @@ module.exports = {
     });
   },
   postReview: function(user_id, restaurant_id, rating, dish_name, text, image_url, cb) {
-    console.log(escape.string(text));
+
     var queryStr = "INSERT into reviews (user_id, restaurant_id, rating, dish_name, text, \
                     image_url) values ("+user_id+","+restaurant_id+","+rating+",'"
-                    + dish_name+"','"+text+"','"+image_url+"');";
+                    + sanitize(dish_name)+"','"+sanitize(text)+"','"+sanitize(image_url)+"');";
+    console.log(queryStr);
     pg.connect(dbUrl, function(err, client, done) {
       client.query(queryStr, function(err, result) {
         done();
