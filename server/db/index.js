@@ -1,4 +1,5 @@
 var pg = require('pg');
+var escape = require('pg-escape').escape;
 
 var dbUrl = process.env.DATABASE_URL || 'postgres://username:@localhost/mountainwolf';
 
@@ -47,6 +48,7 @@ module.exports = {
     });
   },
   postReview: function(user_id, restaurant_id, rating, dish_name, text, image_url, cb) {
+    console.log(escape.string(text));
     var queryStr = "INSERT into reviews (user_id, restaurant_id, rating, dish_name, text, \
                     image_url) values ("+user_id+","+restaurant_id+","+rating+",'"
                     + dish_name+"','"+text+"','"+image_url+"');";
