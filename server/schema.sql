@@ -1,7 +1,7 @@
 -- while running psql in the terminal, run '\i path/to/schema.sql' to generate db and tables locally
 
-CREATE DATABASE mountainwolf;
-\connect mountainwolf
+-- CREATE DATABASE mountainwolf;
+-- \connect mountainwolf
 
 CREATE TABLE "users" (
 "id"  SERIAL NOT NULL ,
