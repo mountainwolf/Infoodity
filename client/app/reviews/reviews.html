@@ -1,16 +1,14 @@
 <div class="row meal-review" ng-repeat="review in results | orderBy: 'stars'">
-  <span class="review-stats col-md-3">
-    <div>
-      <span class="dish-name">{{review.dish_name}}</span>
-    </div>
-    <div>
-      <img ng-src="{{review.image_url}}" class="review-image">
-    </div>
-    <div>
-      <span class="meal-rating">{{review.rating}} Stars</span>
-    </div>
-  </span>
-  <span class="review-text col-md-7">
-    <p>{{review.text}}</p>
-  </span>
+  <div class="dish-name">{{review.dish_name}}</div>
+  <div>
+    <img class="review-image" ng-src="{{review.image_url}}" class="review-image">
+  </div>
+  <div class="meal-rating">{{review.rating}} Stars</div>
+  <div class="row">
+    <span class="col-md-2"></span>
+    <span class="col-md-8 review-text">
+      {{review.text}}
+    </span>
+    <span class="col-md-2"></span>
+  </div>
 </div>
