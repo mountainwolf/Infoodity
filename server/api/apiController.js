@@ -6,7 +6,7 @@ var fs = require('fs');
 var imageUtils = require('../cloudinary/utils');
 var multiparty = require('multiparty');
 
-var useDB = true;
+var useDB = false;
 
 module.exports = {
   getRestaurantsWithName: function(req, res, next) {
@@ -81,6 +81,7 @@ module.exports = {
         res.status(202).end(JSON.stringify(req.body));
       } );
     } else {
+      console.log(req.body);
       res.status(202).send(JSON.stringify(req.body));
     }
   },
@@ -91,7 +92,7 @@ module.exports = {
     var stream = cloudinary.upload_stream(function(result) {
           req.body.url = imageUtils.resizedImageURL(result.url, 600);
 
-          module.exports.postReview(req, res, next) 
+          module.exports.postReview(req, res, next)
         });
 
     form.parse(req, function(err, fields, files){
