@@ -1,8 +1,9 @@
 var data = require('../data/testData');
 var db = require('../db/index');
 var adapter = require('../data/adapter')
-var image_uploader = require('../cloudinary/upload');
+var cloudinary = require('../cloudinary/upload');
 var fs = require('fs');
+var imageUtils = require('../cloudinary/utils');
 var multiparty = require('multiparty');
 
 var useDB = true;
@@ -87,9 +88,10 @@ module.exports = {
   postFullReview: function(req, res, next) {
     var form = new multiparty.Form();
 
-    var stream = image_uploader.upload_stream(function(result) {
-          req.body.image_url = result.url;
-          module.exports.postReview(req, res, next);
+    var stream = cloudinary.upload_stream(function(result) {
+          req.body.url = imageUtils.resizedImageURL(result.url, 600);
+
+          module.exports.postReview(req, res, next) 
         });
 
     form.parse(req, function(err, fields, files){
