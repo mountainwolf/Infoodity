@@ -89,7 +89,7 @@ module.exports = {
 
     var stream = image_uploader.upload_stream(function(result) {
           req.body.image_url = result.url;
-          module.exports.postReview(req, res, next) 
+          module.exports.postReview(req, res, next);
         });
 
     form.parse(req, function(err, fields, files){
