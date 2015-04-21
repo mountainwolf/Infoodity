@@ -1,7 +1,10 @@
+<!-- This page allows the user to submit a review. -->
+
 <div class="row submit-form">
 
   <form name="reviewForm" novalidate>
 
+    <!-- The directive validFile is included here to monitor the input field (ng directives like ng-model and ng-required are not supported in input fields). -->
     <h4>Upload Image:</h4>
     <input type="file" name="image" class="image" ng-model="file" valid-file required accept="image/*"></input>
     <p>{{ reviewForm.image.$error.required && ' - please upload an image file - ' || 'Looks good!'}}</p>
