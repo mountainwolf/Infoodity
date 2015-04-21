@@ -1,6 +1,7 @@
 infoodity.factory('Search', function($http) {
   var _results = {};
 
+  // query database from index and save response in _results
   var search = function(query) {
     return $http({
       method: 'GET',
@@ -12,6 +13,7 @@ infoodity.factory('Search', function($http) {
     });
   };
 
+  // return query results for ResultsController
   var results = function() {
     return _results;
   };
