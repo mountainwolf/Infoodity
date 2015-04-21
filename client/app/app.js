@@ -25,7 +25,7 @@ infoodity.config(function($stateProvider, $urlRouterProvider) {
       views: {
         'landing-area': {
           templateUrl: 'app/landingPage/landingPage.html',
-          controller: 'LandingPageController',
+          controller: 'LandingPageController'
         }
       }
     })
