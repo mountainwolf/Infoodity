@@ -1,5 +1,6 @@
-// This is data for testing when the server is not setup. 
-
+/* This is data for testing when the server is not connected
+ * to the database.
+ */
 var someData =
 {
   "restaurants" : [
