@@ -1,7 +1,7 @@
 infoodity.factory('Search', function($http) {
   var _results = {};
 
-  // query database from index and save response in _results
+  // query database from index and save resp
   var search = function(query) {
     return $http({
       method: 'GET',
@@ -27,6 +27,7 @@ infoodity.factory('Search', function($http) {
 infoodity.factory('Restaurant', function($http) {
   var _restaurant = {};
 
+  // query db from results.html and save resp
   var setRestaurant = function(id) {
     return $http({
       method: 'GET',
@@ -37,6 +38,7 @@ infoodity.factory('Restaurant', function($http) {
     });
   };
 
+  // return restaurant for RestaurantController
   var getRestaurant = function() {
     return _restaurant;
   };
@@ -48,6 +50,7 @@ infoodity.factory('Restaurant', function($http) {
 });
 
 infoodity.factory('Reviews', function($http) {
+  // query db for all reviews for a restaurant
   var getReviews = function(id) {
     return $http({
       method: 'GET',
@@ -58,6 +61,7 @@ infoodity.factory('Reviews', function($http) {
     });
   };
 
+  // send POST request to server through FormData object
   var postReview = function(formData) {
     return $http({
       method: 'POST',
