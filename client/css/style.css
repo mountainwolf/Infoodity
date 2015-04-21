@@ -138,6 +138,8 @@ a:hover {
   font-size: 1.4em;
   margin-top: 35px;
   margin-bottom: 20px;
+  background-color: white;
+  padding: 20px;
 }
 
 .submit-form {
