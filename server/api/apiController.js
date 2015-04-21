@@ -47,6 +47,7 @@ module.exports = {
   },
 
   getReviewsWithRestaurantID: function(req, res, next) {
+
     if (useDB) {
       db.restaurantReviews(Number(req.params.id), function(rows){
         var result = adapter.restaurantsFromSearch(rows);
@@ -62,12 +63,14 @@ module.exports = {
           list.push(review);
         }
       })
+
       var result = adapter.reviewsFromQuery(list);
       res.end(JSON.stringify(result));
     }
   },
 
   postReview: function(req, res, next) {
+
     if (useDB) {
       var info = req.body;
       db.postReview(info.user_id,info.restaurant_id,info.rating,info.dish_name, info.text, info.image_url, function(rows) {
@@ -95,8 +98,5 @@ module.exports = {
         .pipe(stream);
 
     })
-
   }
-
 }
-

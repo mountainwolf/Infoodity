@@ -1,3 +1,5 @@
+// This is data for testing when the server is not setup. 
+
 var someData =
 {
   "restaurants" : [
