@@ -4,6 +4,8 @@ var sanitize = require('./utils').sanitize
 var dbUrl = process.env.DATABASE_URL || 'postgres://username:@localhost/mountainwolf';
 
 module.exports = {
+
+  // Search for restaurants with names containing query.
   search: function(query, cb) {
     var queryStr = "SELECT * FROM restaurants WHERE LOWER(name) like LOWER('%" + sanitize(query) + "%');";
     pg.connect(dbUrl, function(err, client, done) {
@@ -17,6 +19,8 @@ module.exports = {
       });
     });
   },
+
+  // Retrieve the data from the restaurant with id=id
   restaurantInfo: function(id, cb) {
     var queryStr = "SELECT * FROM restaurants WHERE id = " + id + ";";
     pg.connect(dbUrl, function(err, client, done) {
@@ -30,6 +34,8 @@ module.exports = {
       });
     });
   },
+
+  // Retrieve data about all reviews for the restaurant with id=id
   restaurantReviews: function(id, cb) {
     var queryStr = "SELECT reviews.rating, reviews.dish_name, reviews.text, reviews.image_url, \
                     users.user_name, restaurants.name FROM reviews INNER JOIN users \
@@ -47,6 +53,8 @@ module.exports = {
       });
     });
   },
+
+  // Add a review with the given parameters to the database
   postReview: function(user_id, restaurant_id, rating, dish_name, text, image_url, cb) {
 
     var queryStr = "INSERT into reviews (user_id, restaurant_id, rating, dish_name, text, \
