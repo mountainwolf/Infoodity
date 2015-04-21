@@ -1,4 +1,4 @@
-
+// This page contains all router information for the app
 var infoodity = angular.module('infoodity', ['ui.router'])
 
 .controller('searchRestaurant', ['$scope', '$state', 'Search', function($scope, $state, Search){
@@ -38,6 +38,7 @@ infoodity.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    // two views are displayed when routed to the restaurant page
     .state('restaurantPage', {
       url: '/restaurant-page',
       'views': {

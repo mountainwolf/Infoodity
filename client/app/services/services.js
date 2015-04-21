@@ -76,7 +76,12 @@ infoodity.factory('Reviews', function($http) {
   };
 });
 
-infoodity.directive('validFile', function () { // allows for validation that a file (img) has been uploaded in submitReview.html
+/*
+* the validFile directive permits upload validation for the file (img)
+* input field submitReview.html
+*/
+
+infoodity.directive('validFile', function () {
   return {
     require: 'ngModel',
     link: function (scope, el, attrs, ngModel) {
