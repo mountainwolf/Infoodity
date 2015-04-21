@@ -5,7 +5,7 @@
 </div>
 <div class="row search-result" ng-repeat="restaurant in results | orderBy: 'name' | filter:search" ng-click="selection(restaurant)">
   <div>
-    <span class="col-md-4"><a class="restaurant-name" href="#/restaurant/{{results.id}}">{{restaurant.name}}</a></span>
+    <span class="col-md-4"><p class="restaurant-name">{{restaurant.name}}</p></span>
     <span class="restaurant-location col-md-4">{{restaurant.location}}</span>
     <span class="restaurant-price col-md-4">{{restaurant.price}}</span>
   </div>
