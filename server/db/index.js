@@ -56,21 +56,30 @@ module.exports = {
 
   // Add a review with the given parameters to the database
   postReview: function(user_id, restaurant_id, rating, dish_name, text, image_url, cb) {
+    console.log(user_id, restaurant_id, rating, dish_name, text, image_url);
+    if (!(user_id===undefined || restaurant_id===undefined || rating===undefined || dish_name===undefined || text===undefined)) {
 
-    var queryStr = "INSERT into reviews (user_id, restaurant_id, rating, dish_name, text, \
-                    image_url) values ("+user_id+","+restaurant_id+","+rating+",'"
-                    + sanitize(dish_name)+"','"+sanitize(text)+"','"+sanitize(image_url)+"');";
-    console.log(queryStr);
-    pg.connect(dbUrl, function(err, client, done) {
-      client.query(queryStr, function(err, result) {
-        done();
-        if( err ) {
-          console.error(err);
-        } else {
-          cb(result.rows);
-        }
+      if (rating==="undefined") {
+        rating = 0;
+      }
+
+      var queryStr = "INSERT into reviews (user_id, restaurant_id, rating, dish_name, text, \
+                      image_url) values ("+user_id+","+restaurant_id+","+rating+",'"
+                      + sanitize(dish_name)+"','"+sanitize(text)+"','"+sanitize(image_url)+"');";
+      console.log(queryStr);
+      pg.connect(dbUrl, function(err, client, done) {
+        client.query(queryStr, function(err, result) {
+          done();
+          if( err ) {
+            console.error(err);
+          } else {
+            cb(result.rows);
+          }
+        });
       });
-    });
+    } else {
+      cb();
+    }
   },
 
 };
