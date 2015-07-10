@@ -56,6 +56,10 @@ module.exports = {
 
   // Add a review with the given parameters to the database
   postReview: function(user_id, restaurant_id, rating, dish_name, text, image_url, cb) {
+    
+    if (rating==="undefined") {
+      rating = 0;
+    }
 
     var queryStr = "INSERT into reviews (user_id, restaurant_id, rating, dish_name, text, \
                     image_url) values ("+user_id+","+restaurant_id+","+rating+",'"
@@ -71,6 +75,7 @@ module.exports = {
         }
       });
     });
+
   },
 
 };

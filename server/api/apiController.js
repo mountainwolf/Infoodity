@@ -103,28 +103,24 @@ module.exports = {
     // This will parse the FormData
     var form = new multiparty.Form();
 
-
-    // A cloudinary stream to read the file stream
-    var stream = cloudinary.upload_stream(function(result) {
-
-      // Get the image_url for a 600px wide image
-      req.body.image_url = imageUtils.resizedImageURL(result.url, 600);
-
-      // Post the review with req containing the necessary properties
-      module.exports.postReview(req, res, next);
-    });
-
-    // The form parses the req, and finds the fields and files
     form.parse(req, function(err, fields, files){
 
-      // Add the fields from the FormData to the req body
-      for (var key in fields) {
-        req.body[key] = fields[key][0];
-      }
-      // Send the file path to the cloudinary stream reader by piping from a fs.createReadStream
-      fs.createReadStream(files.file[0].path)
-        .pipe(stream);
+      if (files.file){
+        var stream = cloudinary.upload_stream(function(result) {
+          req.body.image_url = imageUtils.resizedImageURL(result.url, 600);
 
+          module.exports.postReview(req, res, next);
+        });
+
+        for (var key in fields) {
+          req.body[key] = fields[key][0];
+        }
+        fs.createReadStream(files.file[0].path)
+          .pipe(stream);
+
+      } else {
+        res.send(404);
+      }
     })
   }
 }
